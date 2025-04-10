@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Directory - Arangka</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .course-directory {
+            max-width: var(--max-width);
+            margin: 6rem auto 2rem;
+            padding: 0 1rem;
+        }
+
+        .search-filters {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+        }
+
+        .filter-select {
+            padding: 0.75rem;
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+            padding: 1.5rem;
+            background-color: var(--background-color);
+        }
+
+        .course-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .course-meta {
+            font-size: 0.875rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .course-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="logo">Arangka</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="directory.html">Courses</a></li>
+                <li><a href="learning.html">My Learning</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="course-directory">
+        <h1>Course Directory</h1>
+        
+        <div class="search-filters">
+            <input type="text" class="search-input" placeholder="Search courses...">
+            <select class="filter-select" id="category-filter">
+                <option value="">All Categories</option>
+                <option value="cs">Computer Science</option>
+                <option value="math">Mathematics</option>
+                <option value="science">Science</option>
+                <option value="humanities">Humanities</option>
+            </select>
+            <select class="filter-select" id="sort-filter">
+                <option value="alphabetical">A-Z</option>
+                <option value="popular">Most Popular</option>
+                <option value="newest">Newest</option>
+            </select>
+        </div>
+
+        <div class="course-grid" id="course-grid">
+            <!-- Course cards will be dynamically populated here -->
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Arangka. Built with love for open education.</p>
+    </footer>
+
+    <script src="../js/courseManager.js"></script>
+</body>
+</html>
